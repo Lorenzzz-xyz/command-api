@@ -8,6 +8,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/commandapi-bukkit" />
+            <option value="$PROJECT_DIR$/commandapi-bungee" />
+            <option value="$PROJECT_DIR$/commandapi-common" />
+            <option value="$PROJECT_DIR$/commandapi-velocity" />
           </set>
         </option>
       </GradleProjectSettings>

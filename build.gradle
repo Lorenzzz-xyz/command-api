@@ -3,42 +3,54 @@ plugins {
     id 'maven-publish'
 }
 
-group = "dev.lorenzz"
-version = "1.0.0"
-
-java {
-    withSourcesJar()
-    withJavadocJar()
+allprojects {
+    group = "dev.lorenzz"
+    version = "2.0.0"
 }
 
-repositories {
-    // Spigot API snapshot
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
-    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
-    maven { url 'https://repo.codemc.io/repository/maven-releases/' }
-    maven { url 'https://repo.codemc.io/repository/maven-snapshots/' }
-    maven { url 'https://repo.extendedclip.com/releases/' }
-    maven { url "https://repo.codemc.io/repository/nms/" }
-    maven { url "https://repo.j4c0b3y.net/public/" }
-    mavenCentral()
-}
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
 
-dependencies {
-    compileOnly "org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT"
-    compileOnly 'org.projectlombok:lombok:1.18.36'
-    annotationProcessor 'org.projectlombok:lombok:1.18.36'
-}
+    java {
+        withSourcesJar()
+        withJavadocJar()
+    }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
+    if (project.name != 'commandapi-velocity') {
+        java {
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
         }
     }
+
     repositories {
-        maven {
-            name = "localStaging"
-            url = uri("$buildDir/repo")
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+        maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+        maven { url 'https://repo.codemc.io/repository/maven-releases/' }
+        maven { url 'https://repo.codemc.io/repository/maven-snapshots/' }
+        maven { url 'https://repo.extendedclip.com/releases/' }
+        maven { url "https://repo.codemc.io/repository/nms/" }
+        maven { url "https://repo.papermc.io/repository/maven-public/" }
+        mavenCentral()
+    }
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok:1.18.36'
+        annotationProcessor 'org.projectlombok:lombok:1.18.36'
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+        repositories {
+            maven {
+                name = "localStaging"
+                url = uri("${rootProject.buildDir}/repo")
+            }
         }
     }
 }

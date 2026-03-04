@@ -1,0 +1,10 @@
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+dependencies {
+    implementation project(':commandapi-common')
+    compileOnly "com.velocitypowered:velocity-api:3.3.0-SNAPSHOT"
+    annotationProcessor "com.velocitypowered:velocity-api:3.3.0-SNAPSHOT"
+}

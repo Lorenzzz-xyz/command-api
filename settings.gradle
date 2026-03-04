@@ -1,0 +1,6 @@
+rootProject.name = 'commandapi'
+
+include 'commandapi-common'
+include 'commandapi-bukkit'
+include 'commandapi-bungee'
+include 'commandapi-velocity'
