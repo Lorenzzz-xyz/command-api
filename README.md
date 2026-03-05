@@ -24,7 +24,8 @@ Aggiungi il repository e la dipendenza per la piattaforma desiderata:
 **Bukkit / Spigot**
 ```groovy
 repositories{
-    maven {url "https://repo.lorenzzzz.xyz/"}
+    maven {
+    url = uri("https://repo.lorenzzzz.xyz/releases")
 }
 dependencies {
     implementation "dev.lorenzz:commandapi-bukkit:2.0.0"
@@ -34,7 +35,8 @@ dependencies {
 **BungeeCord**
 ```groovy
 repositories{
-    maven {url "https://repo.lorenzzzz.xyz/"}
+    maven {
+    url = uri("https://repo.lorenzzzz.xyz/releases")
 }
 dependencies {
     implementation "dev.lorenzz:commandapi-bungee:2.0.0"
@@ -44,7 +46,8 @@ dependencies {
 **Velocity**
 ```groovy
 repositories{
-    maven {url "https://repo.lorenzzzz.xyz/"}
+    maven {
+    url = uri("https://repo.lorenzzzz.xyz/releases")
 }
 dependencies {
     implementation "dev.lorenzz:commandapi-velocity:2.0.0"
