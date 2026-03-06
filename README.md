@@ -28,7 +28,7 @@ repositories{
     url = uri("https://repo.lorenzzzz.xyz/releases")
 }
 dependencies {
-    implementation "dev.lorenzz:commandapi-bukkit:2.0.0"
+    implementation "dev.lorenzz:commandapi-bukkit:2.0.1"
 }
 ```
 
@@ -39,7 +39,7 @@ repositories{
     url = uri("https://repo.lorenzzzz.xyz/releases")
 }
 dependencies {
-    implementation "dev.lorenzz:commandapi-bungee:2.0.0"
+    implementation "dev.lorenzz:commandapi-bungee:2.0.1"
 }
 ```
 
@@ -50,7 +50,7 @@ repositories{
     url = uri("https://repo.lorenzzzz.xyz/releases")
 }
 dependencies {
-    implementation "dev.lorenzz:commandapi-velocity:2.0.0"
+    implementation "dev.lorenzz:commandapi-velocity:2.0.1"
 }
 ```
 
