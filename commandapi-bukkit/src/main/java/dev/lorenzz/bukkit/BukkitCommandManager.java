@@ -16,6 +16,7 @@ public final class BukkitCommandManager {
     private final ProviderRegistry providerRegistry;
     private final CommandDispatcher dispatcher;
     private final PluginCommandFactory factory = new PluginCommandFactory();
+    private boolean brigadierEnabled = true;
 
     public BukkitCommandManager(Plugin plugin) {
         BukkitLanguageProvider languageProvider = new BukkitLanguageProvider(plugin);
@@ -25,6 +26,11 @@ public final class BukkitCommandManager {
         this.providerRegistry.registerDefaults(languageProvider, platform.getColorTranslator());
         BukkitProviderDefaults.register(providerRegistry, languageProvider, platform.getColorTranslator());
         this.dispatcher = new CommandDispatcher(platform, providerRegistry);
+    }
+
+    public BukkitCommandManager setBrigadier(boolean enabled) {
+        this.brigadierEnabled = enabled;
+        return this;
     }
 
     public BukkitCommandManager register(Object commandContainer) {
@@ -52,6 +58,14 @@ public final class BukkitCommandManager {
             bukkitCmd.setDescription(root.description);
             bukkitCmd.setUsage(root.usage);
             commandMap.register(plugin.getName().toLowerCase(Locale.ROOT), bukkitCmd);
+
+            if (brigadierEnabled && BrigadierSupport.isAvailable()) {
+                BrigadierSupport.register(root);
+            }
+        }
+
+        if (brigadierEnabled && BrigadierSupport.isAvailable()) {
+            BrigadierSupport.syncCommands();
         }
 
         return this;

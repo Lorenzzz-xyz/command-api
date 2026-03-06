@@ -351,8 +351,8 @@ public final class CommandDispatcher {
     }
 
     public static final class CommandMeta {
-        final List<ParamMeta> params;
-        final Method method;
+        public final List<ParamMeta> params;
+        public final Method method;
 
         CommandMeta(List<ParamMeta> params, Method method) {
             this.params = params;
@@ -361,15 +361,15 @@ public final class CommandDispatcher {
     }
 
     public static final class ParamMeta {
-        final Parameter parameter;
-        final Class<?> type;
-        final boolean sender;
-        final boolean optional;
-        final String optionalDefault;
-        final boolean hidden;
-        final String name;
-        final String flag;
-        final boolean combined;
+        public final Parameter parameter;
+        public final Class<?> type;
+        public final boolean sender;
+        public final boolean optional;
+        public final String optionalDefault;
+        public final boolean hidden;
+        public final String name;
+        public final String flag;
+        public final boolean combined;
 
         ParamMeta(Parameter parameter) {
             this.parameter = parameter;

@@ -38,7 +38,6 @@ public final class BungeeCommandActor implements CommandActor {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public <T> T unwrap(Class<T> type) {
         if (type.isInstance(sender)) {
             return type.cast(sender);

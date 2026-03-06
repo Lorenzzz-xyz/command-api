@@ -5,7 +5,7 @@ plugins {
 
 allprojects {
     group = "dev.lorenzz"
-    version = "2.0.0"
+    version = "2.0.1"
 }
 
 subprojects {
@@ -17,7 +17,7 @@ subprojects {
         withJavadocJar()
     }
 
-    if (project.name != 'commandapi-velocity') {
+    if (project.name != 'commandapi-velocity' && project.name != 'commandapi-bukkit') {
         java {
             sourceCompatibility = JavaVersion.VERSION_1_8
             targetCompatibility = JavaVersion.VERSION_1_8
@@ -32,6 +32,19 @@ subprojects {
         maven { url 'https://repo.extendedclip.com/releases/' }
         maven { url "https://repo.codemc.io/repository/nms/" }
         maven { url "https://repo.papermc.io/repository/maven-public/" }
+        maven { url "https://libraries.minecraft.net" }
+        maven {
+            name = "LorenzRepo"
+            url = uri(
+                version.toString().endsWith("SNAPSHOT")
+                    ? "https://repo.lorenzzzz.xyz/releases"
+                    : "https://repo.lorenzzzz.xyz/private"
+            )
+            credentials {
+                username = project.findProperty("lorenzRepoUser") ?: System.getenv("REPO_USER") ?: ""
+                password = project.findProperty("lorenzRepoPass") ?: System.getenv("REPO_PASS") ?: ""
+            }
+        }
         mavenCentral()
     }
 
@@ -50,6 +63,18 @@ subprojects {
             maven {
                 name = "localStaging"
                 url = uri("${rootProject.buildDir}/repo")
+            }
+            maven {
+                name = "LorenzRepo"
+                url = uri(
+                    version.toString().endsWith("SNAPSHOT")
+                        ? "https://repo.lorenzzzz.xyz/private"
+                        : "https://repo.lorenzzzz.xyz/releases"
+                )
+                credentials {
+                    username = project.findProperty("lorenzRepoUser") ?: System.getenv("REPO_USER") ?: ""
+                    password = project.findProperty("lorenzRepoPass") ?: System.getenv("REPO_PASS") ?: ""
+                }
             }
         }
     }

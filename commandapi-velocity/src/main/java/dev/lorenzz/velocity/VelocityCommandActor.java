@@ -43,7 +43,6 @@ public final class VelocityCommandActor implements CommandActor {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public <T> T unwrap(Class<T> type) {
         if (type.isInstance(source)) {
             return type.cast(source);

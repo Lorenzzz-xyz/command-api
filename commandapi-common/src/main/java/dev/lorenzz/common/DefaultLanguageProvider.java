@@ -4,72 +4,72 @@ public class DefaultLanguageProvider implements LanguageProvider {
 
     @Override
     public String noPermission() {
-        return "&5&lCORE &8&l» &cNessun permesso!";
+        return "&cYou don't have permission!";
     }
 
     @Override
     public String inputTooLow(Object value) {
-        return "&5&lCORE &8&l» &cErrore: devi inserire un valore maggiore di " + value + "!";
+        return "&cValue must be greater than " + value + "!";
     }
 
     @Override
     public String inputTooHigh(Object value) {
-        return "&5&lCORE &8&l» &cErrore: devi inserire un valore minore di " + value + "!";
+        return "&cValue must be less than " + value + "!";
     }
 
     @Override
     public String offlinePlayer(String name) {
-        return "&5&lCORE &8&l» &cErrore: " + name + " non è online!";
+        return "&c" + name + " is not online!";
     }
 
     @Override
     public String playerNeverJoined(String name) {
-        return "&5&lCORE &8&l» &cErrore: " + name + " non è mai entrato nel server!";
+        return "&c" + name + " has never joined the server!";
     }
 
     @Override
     public String invalidBoolean() {
-        return "&5&lDEVELOPER &8&l» &cErrore: non è un booleano valido!";
+        return "&cInvalid boolean value!";
     }
 
     @Override
     public String invalidNumber(String input) {
-        return "&5&lDEVELOPER &8&l» &cErrore: " + input + " non è un numero valido!";
+        return "&c" + input + " is not a valid number!";
     }
 
     @Override
     public String invalidEnum(String input, String options) {
-        return "&5&lCORE &8&l» &cErrore: " + input + " non è un'opzione valida! Opzioni disponibili: " + options;
+        return "&c" + input + " is not a valid option! Available: " + options;
     }
 
     @Override
     public String playersOnly() {
-        return "&5&lCORE &8&l» &cErrore: questo comando può essere eseguito solo da un giocatore!";
+        return "&cThis command can only be executed by a player!";
     }
 
     @Override
     public String consolesOnly() {
-        return "&5&lCORE &8&l» &cErrore: questo comando può essere usato solo dalla console!";
+        return "&cThis command can only be executed from console!";
     }
 
     @Override
     public String commandNotRegistered(String name) {
-        return "&c&lBUG &8&l» &cErrore: il comando /" + name + " non è registrato correttamente!";
+        return "&cCommand /" + name + " is not registered correctly!";
     }
 
     @Override
     public String errorOccurred() {
-        return "&5&lCORE &8&l» &cErrore: si è verificato un errore imprevisto!";
+        return "&cAn unexpected error occurred!";
     }
 
     @Override
     public String helpHeader(String command, int page, int maxPages) {
-        return "&ePagina aiuto &d(/" + command + ") &7- &b(" + page + "/" + maxPages + ")\n&r";
+        return "&eHelp &d(/" + command + ") &7- &b(" + page + "/" + maxPages + ")\n&r";
     }
 
     @Override
     public String helpFooter(String command, int count) {
-        return "&r\n&7Trovati (" + count + ") sottocomandi per (/" + command + ")";
+        return "&r\n&7Found (" + count + ") subcommands for (/" + command + ")";
     }
 
     @Override

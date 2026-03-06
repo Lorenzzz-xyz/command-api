@@ -32,7 +32,6 @@ public final class BukkitLanguageProvider implements LanguageProvider {
     public BukkitLanguageProvider(Plugin plugin) {
         File file = new File(plugin.getDataFolder(), "commands-language.yml");
         YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
-        boolean save = false;
 
         noPermission = loadOrSet(config, "no-permission", defaults.noPermission());
         inputTooLow = loadOrSet(config, "input-too-low", defaults.inputTooLow("%s"));
@@ -46,8 +45,8 @@ public final class BukkitLanguageProvider implements LanguageProvider {
         consolesOnly = loadOrSet(config, "consoles-only", defaults.consolesOnly());
         commandNotRegistered = loadOrSet(config, "command-not-registered", defaults.commandNotRegistered("%s"));
         errorOccurred = loadOrSet(config, "error-occurred", defaults.errorOccurred());
-        helpHeader = loadOrSet(config, "help-header", "&ePagina aiuto &d(/<command>) &7- &b(<page>/<max>)\n&r");
-        helpFooter = loadOrSet(config, "help-footer", "&r\n&7Trovati (<count>) sottocomandi per (/<command>)");
+        helpHeader = loadOrSet(config, "help-header", "&eHelp &d(/<command>) &7- &b(<page>/<max>)\n&r");
+        helpFooter = loadOrSet(config, "help-footer", "&r\n&7Found (<count>) subcommands for (/<command>)");
         helpEntryDescription = loadOrSet(config, "help-entry-description", " &7- &e/<command> &d<arguments> &7- &f<description>");
         helpEntryNoDescription = loadOrSet(config, "help-entry-no-description", " &7- &e/<command> &d<arguments>");
 
