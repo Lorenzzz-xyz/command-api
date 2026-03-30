@@ -8,6 +8,7 @@ public final class BungeeColorTranslator implements ColorTranslator {
     @Override
     public String translate(String input) {
         if (input == null) return "";
+        input = ColorTranslator.translateHexCodes(input);
         return ChatColor.translateAlternateColorCodes('&', input);
     }
 }

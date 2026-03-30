@@ -5,7 +5,7 @@ plugins {
 
 allprojects {
     group = "dev.lorenzz"
-    version = "2.0.1"
+    version = "2.0.2"
 }
 
 subprojects {

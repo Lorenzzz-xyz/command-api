@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/commandapi-bungee/commandapi.commandapi-bungee.main.iml" filepath="$PROJECT_DIR$/.idea/modules/commandapi-bungee/commandapi.commandapi-bungee.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/commandapi-common/commandapi.commandapi-common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/commandapi-common/commandapi.commandapi-common.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/commandapi-velocity/commandapi.commandapi-velocity.main.iml" filepath="$PROJECT_DIR$/.idea/modules/commandapi-velocity/commandapi.commandapi-velocity.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commandapi.main.iml" filepath="$PROJECT_DIR$/.idea/modules/commandapi.main.iml" />
     </modules>
   </component>
 </project>
